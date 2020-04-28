@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { log } from 'util';
 
+
+//Un decorador es una función que, dependiendo de que cosa queramos decorar, 
+//sus argumentos serán diferentes. 
+//Usan la forma @expression donde expression evaluará la función que será llamada.
+//En este caso decora la clase de AppComponent
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,26 +14,15 @@ export class AppComponent implements OnInit{
   title = 'tips';
 
   ngOnInit() {
-   
-    //Clase en typescript
-    class Usuario {
-      //Función que se ejecuta cada vez que se instancia la clase
-      constructor(
-        public nombre           : string,
-        public apellidos        : string,
-        public nickname         : string,
-        public edad             : string,
-        public genero           : string,
-        public email            : string,
-        public password         : string
-        ){}
-    }
 
-    const new_user = new Usuario('Sam','Apellidos', 'codexmaker',
-                                 '24', 'M', 'codex@gmail.com', '123');
+    //Tipado del retorno de una función
+    //Nos sirve para garantizar el tipo de dato que retornara nuestra función
+    const sumar = (a: number, b: number): number => a+b;
 
-    console.log(new_user);
+    const nombre = ():string => 'Hey! Developers!';
 
+    console.log(nombre());
+     
 
    }
 
